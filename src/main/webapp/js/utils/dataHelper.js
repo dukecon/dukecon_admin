@@ -1,4 +1,4 @@
-define(['moment'], function(moment) {
+define(['moment', 'store'], function(moment, store) {
 	"use strict";
 	
 	function filterPastEvents(events) {
@@ -58,7 +58,7 @@ define(['moment'], function(moment) {
 
 	/* ----- Exports -----*/
 	function filterAndSortEvents(events) {
-		return sortEventsByDate(filterPastEvents(events));
+		return sortEventsByDate(store.hidePast ? filterPastEvents(events) : events);
 	}
 	
 	function enrichData(entry, metaData) {

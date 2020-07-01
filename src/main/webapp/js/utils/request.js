@@ -130,7 +130,7 @@ define(['dataHelper'], function (helper) {
     function getList(onSuccess, onError) {
         getConferences(
             function (result) {
-                result.events = helper.filterAndSortEvents(result.events);
+                // result.events = helper.filterAndSortEvents(result.events);
                 getDelta(result, onSuccess, onError)
             },
             onError

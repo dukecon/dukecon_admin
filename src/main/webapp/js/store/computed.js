@@ -1,9 +1,9 @@
-define(['store'], function(store) {
+define(['dataHelper', 'store'], function (helper, store) {
 	function filterTalks() {
-		var talks = store.allTalks;
+		var talks = helper.filterAndSortEvents(store.allTalks);
 		var filterBy = store.quickFilter.toLowerCase();
 		if (filterBy.length >= 2) {
-			talks = store.allTalks.filter(function(talk) {
+			talks = talks.filter(function(talk) {
 				var freeOrFull = false;
 				if (filterBy === "fr" || filterBy === "fre" || filterBy === "free") {
 					freeOrFull = freeOrFull || !talk.fullyBooked;

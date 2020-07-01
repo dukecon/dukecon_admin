@@ -1,6 +1,7 @@
 define([], function() {
 	return {
 		allTalks: [],
+		hidePast: true,
 		quickFilter: "",
 		loading: true,
 		error: false,
